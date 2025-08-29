@@ -174,11 +174,17 @@ async function playAudio(status) {
 }
 
 function init() {
+  const music = new Audio(`./src/assets/audios/egyptian_duel.mp3`);
+  // music.play();
   state.fieldCards.player.style.display = "none";
   state.fieldCards.computer.style.display = "none";
 
   drawCards(5, state.playersSides.player);
   drawCards(5, state.playersSides.computer);
+
+  const bgm = document.getElementById("bgm");
+  bgm.volume = 0.6;
+  bgm.play();
 }
 
 init();
